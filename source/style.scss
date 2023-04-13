@@ -1,0 +1,135 @@
+@import url(normalize.css);
+
+
+.content_wrepper{
+    min-height: 100%;
+    min-width: 100%;
+    overflow: clip;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*----------------------------------------*/
+
+.header{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500px;
+        size: 5px;
+        line-height: 20px;
+        color:#898F8F;
+        text-transform: uppercase;
+        &:hover{
+            color: #686d6d;
+            cursor: pointer;
+        }
+    }
+    h2{
+        font-family: 'Roboto';
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 60px;
+        color: gold;
+        text-transform: uppercase;
+    }
+}
+/*-------------------------------------------*/
+
+.divider{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .divider-box{
+        width: 100%;
+        width: 300px;
+        margin: 10px;
+        border: 2px solid gold;
+    }
+}
+/*-------------------------------------------*/
+
+.main_content{
+    width: auto;
+    height: auto;
+    margin: 20px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    column-count: 2;
+    column-width: 100%;
+    column-gap: 20px;
+    column-rule:  2px solid gold;
+    column-span: all;
+    .content_photo_gaps{
+        break-inside: avoid;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       img{
+        margin: 20px;
+        width: 100%;
+        height: 100%;
+       }
+    
+    transition: all .3s;
+    cursor: pointer;
+    
+    &:hover {
+        filter: contrast(1.1);
+    }
+    &:active {
+        filter: contrast(0.9);
+    }
+    &::before,
+    &::after {
+        content: "";
+        margin: 10px;
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border: 3px solid gold;
+        transition: all .5s;
+        animation: clippath 3s infinite linear;
+        border-radius: 10px;
+    }
+    
+    &::after {
+        animation: clippath 3s infinite -1.5s linear;
+    }
+}
+
+@keyframes clippath {
+    0%,
+    100% {
+        clip-path: inset(0 0 98% 0);
+    }
+    
+    25% {
+        clip-path: inset(0 98% 0 0);
+    }
+    50% {
+        clip-path: inset(98% 0 0 0);
+    }
+    75% {
+        clip-path: inset(0 0 0 98%);
+    }
+
+
+    }
+    .content_text{
+        break-inside: avoid;
+    }
+}
